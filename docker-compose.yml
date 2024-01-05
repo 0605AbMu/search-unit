@@ -8,7 +8,7 @@
       - 34000:3400
   
   elasticsearch-server:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
     container_name: elasticsearch
     environment:
       - xpack.security.enabled=false
