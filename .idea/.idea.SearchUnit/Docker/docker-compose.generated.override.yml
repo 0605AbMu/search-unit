@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  elasticsearch:
+    build:
+      context: "C:\\Users\\Abdumannon-PC\\RiderProjects\\SearchUnit"
+      dockerfile: "ElasticSearch/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/ElasticSearch.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "elasticsearch:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Abdumannon-PC\\.nuget\\packages:/root/.nuget/packages"
+    - "C:\\Users\\Abdumannon-PC\\RiderProjects\\SearchUnit\\ElasticSearch:/app:rw"
+    - "C:\\Users\\Abdumannon-PC\\RiderProjects\\SearchUnit:/src:rw"
+    working_dir: "/app"
