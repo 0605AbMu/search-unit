@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace ElasticSearch.Services;
 
-public interface IElasticService
+public interface IElasticService<in T> where T : class
 {
     Task<string> CreateIndexAsync(string indexName);
-    Task IndexAsync<T>(string indexName, T doc);
-    Task IndexManyAsync<T>(string indexName, IEnumerable<T> doc);
-    Task SearchBySuggestion<T>(string index, string term);
+    Task IndexAsync(string indexName, T doc);
+    Task IndexManyAsync(string indexName, IEnumerable<T> doc);
+    Task SearchForSuggestionAsync(string index, string term);
 }

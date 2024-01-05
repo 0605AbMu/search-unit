@@ -3,24 +3,24 @@ using System.Threading.Tasks;
 
 namespace ElasticSearch.Services;
 
-public class ElasticService<T> : ElasticTaskPerformer, IElasticService where T : class
+public class ElasticService<T> : ElasticTaskPerformer, IElasticService<T> where T : class
 {
     public Task<string> CreateIndexAsync(string indexName)
     {
         throw new System.NotImplementedException();
     }
 
-    public Task IndexAsync<T1>(string indexName, T1 doc)
+    public Task IndexAsync(string indexName, T doc)
     {
         throw new System.NotImplementedException();
     }
 
-    public Task IndexManyAsync<T1>(string indexName, IEnumerable<T1> doc)
+    public Task IndexManyAsync(string indexName, IEnumerable<T> doc)
     {
         throw new System.NotImplementedException();
     }
 
-    public Task SearchBySuggestion<T1>(string index, string term)
+    public Task SearchForSuggestionAsync(string index, string term)
     {
         throw new System.NotImplementedException();
     }
