@@ -12,6 +12,9 @@ public static class WebApplicationExtensions
     public static async Task PingElasticSearch(this WebApplication app)
     {
         var client = app.Services.GetService<ElasticsearchClient>();
+        
+        ArgumentNullException.ThrowIfNull(client);
+        
         var pingResult = await client.PingAsync();
 
         if (!pingResult.IsSuccess())
